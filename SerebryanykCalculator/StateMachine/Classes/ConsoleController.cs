@@ -47,7 +47,7 @@ namespace SerebryanykCalculator.StateMachine.Classes
         {
             while (true)
             {
-                WriteLine($"You are in {State.Name} state. Next, Previous Or Number");
+                WriteLine($"Ты находишься на в состоянии \"{State.Name}\". Next, Previous или число для перевода");
                 ReadLine();
             }
         }
