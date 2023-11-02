@@ -1,5 +1,5 @@
 ﻿using SerebryanykCalculator;
 using SerebryanykCalculator.StateMachine.Classes;
 
-ConsoleController consoleController = new ConsoleController(new SerebryanykToRealRubleState());
+CalculatorController consoleController = new CalculatorController(new SerebryanykToRealRubleState());
 consoleController.Run();

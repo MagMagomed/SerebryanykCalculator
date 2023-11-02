@@ -12,6 +12,6 @@ namespace SerebryanykCalculator.StateMachine.Interfaces
         StateMachine.Classes.StateMachine stateMachine { get; }
         void Next(IStatable statable);
         void Previous(IStatable statable);
-        string Calculate(IStatable statable, decimal value);
+        decimal Calculate(IStatable statable, decimal value);
     }
 }

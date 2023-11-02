@@ -7,27 +7,14 @@ using System.Threading.Tasks;
 
 namespace SerebryanykCalculator.StateMachine.Classes
 {
-    internal class RealRubleToSerebryanykState : IState
+    internal class RealRubleToSerebryanykState : State
     {
-        public string Name => "Перевод настоящих рублей в серебряники";
-
-        public StateMachine stateMachine => new StateMachine();
-
+        public override string Name => "Перевод настоящих рублей в серебряники";
         private Calculator _calculator { get; set; } = new Calculator();
 
-        public string Calculate(IStatable statable, decimal value)
+        public override decimal Calculate(IStatable statable, decimal value)
         {
-            return _calculator.RealRubleToSerebryanyk(value).ToString();
-        }
-
-        public void Next(IStatable statable)
-        {
-            statable.SetState(stateMachine.Next(this));
-        }
-
-        public void Previous(IStatable statable)
-        {
-            statable.SetState(stateMachine.Previous(this));
+            return _calculator.RealRubleToSerebryanyk(value);
         }
     }
 }

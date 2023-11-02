@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace SerebryanykCalculator.StateMachine.Classes
 {
-    internal class ConsoleController : IStatable
+    internal class CalculatorController : IStatable
     {
         private IState State { get; set; }
-        public ConsoleController(IState state) {
+        public CalculatorController(IState state) {
             State = state;
         }
         public void ReadLine()
@@ -29,7 +29,7 @@ namespace SerebryanykCalculator.StateMachine.Classes
             }
             else if (Decimal.TryParse(command, out var value))
             {
-                WriteLine(State.Calculate(this, value));
+                WriteLine(decimal.Round(State.Calculate(this, value), 2));
             }
         }
         public void WriteLine(object value)
